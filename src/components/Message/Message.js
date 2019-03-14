@@ -3,13 +3,14 @@ import styles from './Message.module.scss';
 
 class Message extends Component {
   render() {
+    const { details } = this.props;
     return (
-      <div className={styles.message}>
+      <div className={styles['message']}>
         <div>
-          <strong>Anon5467</strong> <small>17.02.2019</small>
+          <strong>{details.author}</strong> <small>{details.created}</small>
         </div>
         <div>
-          df
+          {details.text}
         </div>
       </div>
     );
