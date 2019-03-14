@@ -5,7 +5,7 @@ class SelectRoom extends Component {
   render() {
     return (
       <div className="control">
-        <div class={`${styles['select-room']} select`}>
+        <div className={`select ${styles['select-room']}`}>
           <select>
             <option>Select dropdown</option>
             <option>With options</option>
