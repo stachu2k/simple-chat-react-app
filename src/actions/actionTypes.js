@@ -1,0 +1,2 @@
+export const CHANGE_NICKNAME = 'CHANGE_NICKNAME';
+export const SEND_MESSAGE = 'SEND_MESSAGE';
