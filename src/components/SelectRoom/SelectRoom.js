@@ -2,13 +2,23 @@ import React, { Component } from 'react';
 import styles from './SelectRoom.module.scss';
 
 class SelectRoom extends Component {
+  _changeOption = e => {
+    this.props.changeRoom(e.target.value);
+  }
+
   render() {
+
+    const { rooms } = this.props;
+
     return (
       <div className="control">
         <div className={`select ${styles['select-room']}`}>
-          <select>
-            <option>Select dropdown</option>
-            <option>With options</option>
+          <select onChange={e => this._changeOption(e)}>
+            {
+              rooms.map(room => (
+                <option key={room.id} value={room.id}>{room.name}</option>
+              ))
+            }
           </select>
         </div>
       </div>
