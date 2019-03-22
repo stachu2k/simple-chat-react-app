@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Input } from 'components';
+import Input from 'components/Input/Input';
 import { sendMessage } from 'actions';
 
 const mapStateToProps = state => ({
