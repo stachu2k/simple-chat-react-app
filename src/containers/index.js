@@ -1,2 +1,3 @@
-export { default as InputCont } from 'containers/InputCont/InputCont';
-export { default as MessageAreaCont } from 'containers/MessageAreaCont/MessageAreaCont';
+export { default as InputCont } from './InputCont';
+export { default as MessageAreaCont } from './MessageAreaCont';
+export { default as SelectRoomCont } from './SelectRoomCont';
