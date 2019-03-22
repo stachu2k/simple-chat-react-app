@@ -1,8 +1,8 @@
-import * as ActionTypes from 'actions/actionTypes';
+import types from 'actions/actionTypes';
 
 function nickname(state = '', action) {
   switch (action.type) {
-    case ActionTypes.CHANGE_NICKNAME:
+    case types.CHANGE_NICKNAME:
       return action.nickname;
     default:
       return state;

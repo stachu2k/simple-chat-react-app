@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux';
-import nickname from './nickname';
 import messages from './messages';
+import nickname from './nickname';
+import rooms from './rooms';
+import selectedRoom from './selectedRoom';
 
 const chatApp = combineReducers({
-  nickname,
   messages,
+  nickname,
+  rooms,
+  selectedRoom,
 });
 
 export default chatApp;
