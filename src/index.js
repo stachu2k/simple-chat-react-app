@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { changeNickname } from 'actions';
+import { fetchRooms } from 'operations';
 import chatApp from 'reducers';
 
-const store = createStore(chatApp);
+const logger = createLogger();
+
+const store = createStore(
+  chatApp,
+  applyMiddleware(thunk, logger)
+);
 
 ReactDOM.render(
   <Provider store={store}>
@@ -23,9 +31,7 @@ ReactDOM.render(
 serviceWorker.unregister();
 
 //--------------------- TEST ------------------------------------------------------
-console.log(store.getState());
-const unsubscribe = store.subscribe(() => console.log(store.getState()))
 store.dispatch(changeNickname('Stachu'));
-unsubscribe();
+store.dispatch(fetchRooms());
 window.store = store;
 //--------------------- /TEST ------------------------------------------------------
