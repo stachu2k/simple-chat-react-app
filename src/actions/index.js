@@ -1,20 +1,4 @@
-import * as ActionTypes from 'actions/actionTypes';
-
-function sendMessage(text, author, created, room) {
-  return {
-    type: ActionTypes.SEND_MESSAGE,
-    text,
-    author,
-    created,
-    room,
-  }
-}
-
-function changeNickname(nickname) {
-  return {
-    type: ActionTypes.CHANGE_NICKNAME,
-    nickname,
-  }
-}
-
-export { sendMessage, changeNickname };
+export * from './messages';
+export * from './nickname';
+export * from './rooms';
+export * from './selectedRoom';
