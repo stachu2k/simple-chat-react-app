@@ -3,14 +3,14 @@ import styles from './Message.module.scss';
 
 class Message extends Component {
   render() {
-    const { details } = this.props;
+    const { author, created, text } = this.props;
     return (
       <div className={styles['message']}>
         <div>
-          <strong>{details.author}</strong> <small>{details.created}</small>
+          <strong>{author}</strong> <small>{new Date(created).toLocaleString()}</small>
         </div>
         <div>
-          {details.text}
+          {text}
         </div>
       </div>
     );
