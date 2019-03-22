@@ -3,14 +3,29 @@ import { Message } from 'components';
 import styles from './MessageArea.module.scss';
 
 class MessageArea extends Component {
+  componentDidMount() {
+    if (this.props.selectedRoom !== 0) {
+      const { selectedRoom, fetchMessages } = this.props;
+      fetchMessages(selectedRoom);
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.selectedRoom !== prevProps.selectedRoom) {
+      const { selectedRoom, fetchMessages } = this.props;
+      fetchMessages(selectedRoom);
+    }
+  }
 
   render() {
-    const { messages } = this.props;
+
+    const { isFetching, messages } = this.props;
+    
     return (
-      <div className={styles['message-area']}>
+      <div className={`${styles['message-area']} ${isFetching ? styles['is-loading'] : ''}`}>
         {
           messages.map(message => (
-            <Message key={message.id} details={message} />
+            <Message key={message.id} {...message} />
           ))
         }
       </div>
