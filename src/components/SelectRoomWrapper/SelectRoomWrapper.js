@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { SelectRoom } from 'components';
+import { SelectRoomCont } from 'containers';
 import styles from './SelectRoomWrapper.module.scss';
 
 class SelectRoomWrapper extends Component {
   render() {
     return (
       <div className={styles['select-room-wrapper']}>
-        <SelectRoom/>
+        <SelectRoomCont/>
       </div>
     );
   }
