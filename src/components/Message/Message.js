@@ -7,7 +7,7 @@ class Message extends Component {
     return (
       <div className={styles['message']}>
         <div>
-          <strong>{author}</strong> <small>{new Date(created).toLocaleString()}</small>
+          <strong>{author}</strong> <small>{new Date(created * 1000).toLocaleString()}</small>
         </div>
         <div>
           {text}
