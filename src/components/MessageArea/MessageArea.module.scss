@@ -1,9 +1,10 @@
 @import 'bulma/sass/utilities/mixins.sass';
 
 .message-area {
-  flex-grow: 1;
   border: 1px solid;
+  flex-grow: 1;
   margin: 10px;
+  overflow-y: scroll;
   &.is-loading {
       position: relative;
       pointer-events: none;
