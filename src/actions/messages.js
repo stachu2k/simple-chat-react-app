@@ -23,13 +23,27 @@ function fetchMessagesSuccess(items) {
   }
 }
 
-function sendMessage(text, author, created, room) {
+function sendMessageRequest(message) {
   return {
-    type: types.SEND_MESSAGE,
-    text,
-    author,
-    created,
-    room,
+    type: types.SEND_MESSAGE_REQUEST,
+    message,
+    error: false,
+  }
+}
+
+function sendMessageFailure(tempId) {
+  return {
+    type: types.SEND_MESSAGE_FAILURE,
+    error: true,
+    tempId,
+  }
+}
+
+function sendMessageSuccess(message, tempId) {
+  return {
+    type: types.SEND_MESSAGE_SUCCESS,
+    message,
+    tempId,
   }
 }
 
@@ -37,5 +51,7 @@ export {
   fetchMessagesRequest,
   fetchMessagesFailure,
   fetchMessagesSuccess,
-  sendMessage,
+  sendMessageRequest,
+  sendMessageFailure,
+  sendMessageSuccess,
 };
