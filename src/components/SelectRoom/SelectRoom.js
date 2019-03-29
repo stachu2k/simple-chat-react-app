@@ -3,7 +3,7 @@ import styles from './SelectRoom.module.scss';
 
 class SelectRoom extends Component {
   _changeOption = e => {
-    this.props.changeRoom(e.target.value);
+    this.props.changeRoom(parseInt(e.target.value));
   }
 
   render() {
