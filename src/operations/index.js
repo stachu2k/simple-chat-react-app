@@ -1,3 +1,3 @@
 
-export { fetchRooms } from './rooms';
-export { fetchMessages } from './messages';
+export * from './rooms';
+export * from './messages';
