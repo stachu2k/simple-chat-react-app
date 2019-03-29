@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {convertLocalDateToUTCDate } from 'lib';
 
 class Input extends Component {
   _input = undefined;
@@ -10,12 +11,14 @@ class Input extends Component {
       return;
     }
 
-    this.props.sendMessage(
-      this._input.value,
-      this.props.nickname,
-      new Date().toDateString(),
-      1,
-    );
+    const UTCDate = convertLocalDateToUTCDate(new Date());
+
+    this.props.sendMessage({
+      text: this._input.value,
+      author: this.props.nickname,
+      created: ~~(UTCDate.getTime() / 1000),
+      room: this.props.selectedRoom,
+    });
 
     this._input.value = '';
   }
