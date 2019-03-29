@@ -14,7 +14,14 @@ function fetchMessages(selectedRoom) {
     .catch(error => Promise.reject(error));
 }
 
+function sendMessage(message) {
+  return axios.post(`${API_URL}messages/`, message)
+  .then(response => Promise.resolve(response.data))
+  .catch(error => Promise.reject(error));
+}
+
 export default {
   fetchRooms,
   fetchMessages,
+  sendMessage,
 }
