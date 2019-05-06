@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {convertLocalDateToUTCDate } from 'lib';
+import { convertLocalDateToUTCDate } from 'lib';
 
 class Input extends Component {
   _input = undefined;
@@ -26,17 +26,16 @@ class Input extends Component {
   render() {
     return (
       <form onSubmit={e => this._submitForm(e)}>
-        <div className="field has-addons">
-          <div className="control is-expanded">
+        <div>
+          <div>
             <input
-              className="input"
               type="text"
               placeholder="write message"
               ref={el => this._input = el}
             />
           </div>
-          <div className="control">
-            <input className="button" type="submit" value="Send"/>
+          <div>
+            <input type="submit" value="Send"/>
           </div>
         </div>
       </form>
