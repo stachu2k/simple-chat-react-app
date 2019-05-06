@@ -1,16 +1,29 @@
 import React, { Component } from 'react';
-import { InputWrapper, SelectRoomWrapper } from 'components';
-import { MessageAreaCont } from 'containers';
+import {
+  Header,
+  InputWrapper,
+  SelectRoomWrapper,
+} from 'components';
+import {
+  InputCont,
+  MessageAreaCont,
+  SelectRoomCont,
+} from 'containers';
+import 'normalize.css';
 import styles from './App.module.scss';
-import './styles.scss';
 
 class App extends Component {
   render() {
     return (
-      <div className={styles['app']}>
-        <SelectRoomWrapper/>
-        <MessageAreaCont/>
-        <InputWrapper/>
+      <div className={styles.App}>
+        <Header />
+        <SelectRoomWrapper>
+          <SelectRoomCont />
+        </SelectRoomWrapper>
+        <MessageAreaCont />
+        <InputWrapper>
+          <InputCont />
+        </InputWrapper>
       </div>
     );
   }
