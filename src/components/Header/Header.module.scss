@@ -1,0 +1,37 @@
+@import 'theme/_colors.scss';
+@import 'theme/_mixins.scss';
+
+.Header {
+  background-color: $black;
+}
+
+.HeaderContainer {
+  @include flexbox;
+  @include prefix(justify-content, space-between);
+  @include prefix(align-items, center);
+  height: 50px;
+  background-color: $black;
+  margin: 0 25px;
+}
+
+.Title {
+  color: $header-color;
+}
+
+.Button {
+  background: $light-gray;
+  border: 1px solid $white;
+  border-radius: 6px;
+  box-shadow: 0 0 4px $light-gray;
+  font-size: x-small;
+  padding: 9px 14px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: lighten($color: $light-gray, $amount: 3%)
+  }
+
+  &:active {
+    @include prefix(transform, translateY(1px));
+  }
+}
