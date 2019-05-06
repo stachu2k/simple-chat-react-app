@@ -1,3 +1,4 @@
+export { default as Header } from 'components/Header/Header';
 export { default as Input } from 'components/Input/Input';
 export { default as InputWrapper } from 'components/InputWrapper/InputWrapper';
 export { default as MessageArea } from 'components/MessageArea/MessageArea';
