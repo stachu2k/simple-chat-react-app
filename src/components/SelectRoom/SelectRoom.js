@@ -11,8 +11,8 @@ class SelectRoom extends Component {
     const { rooms } = this.props;
 
     return (
-      <div className="control">
-        <div className={`select ${styles['select-room']}`}>
+      <div>
+        <div>
           <select onChange={e => this._changeOption(e)}>
             {
               rooms.map(room => (
