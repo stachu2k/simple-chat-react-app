@@ -4,12 +4,12 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { changeNickname } from 'actions';
 import { fetchRooms } from 'operations';
 import chatApp from 'reducers';
+import './index.scss';
 
 const logger = createLogger();
 
